@@ -1,5 +1,13 @@
-function App() {
-  return <></>;
-}
+import React, { Suspense, lazy } from "react";
 
-export default App;
+const ChildrenPage = lazy(() => import("./children/ChildrenPage"));
+
+export const App: React.FC = () => {
+  return (
+    <>
+      <Suspense fallback={<div>Loading...</div>}>
+        <ChildrenPage />
+      </Suspense>
+    </>
+  );
+};
