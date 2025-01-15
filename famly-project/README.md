@@ -1,50 +1,56 @@
-# React + TypeScript + Vite
+# Running the App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+To run the app, follow these steps:
 
-Currently, two official plugins are available:
+1. **Install dependencies**:
+   You can use either `npm` or `yarn` to install the required dependencies.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Using npm:
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```sh
+npm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Using yarn:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```sh
+yarn install
 ```
+
+2. **Create an `.env` file**:
+   Create a file named `.env` in the root directory of the project and add your access key.
+
+!!! OTHERWISE API CALLS WONT WORK !!!
+
+Example:
+
+```env
+VITE_ACCESS_TOKEN=your_access_key_here
+```
+
+3. **Run the development server**:
+   You can use either `npm` or `yarn` to start the development server.
+
+Using npm:
+
+```sh
+npm run dev
+```
+
+Using yarn:
+
+```sh
+yarn dev
+```
+
+## Todo List
+
+- [ ] Make it able to select multiple children in Table
+- [ ] Make possible to check in & out multiple children
+- [ ] Make CSS Statuses look better with ex Icons instead of Sleeping Yes & No
+- [ ] Better CSS color choices
+- [ ] When no child is selected create Skeleton component instead of No child selected
+- [ ] Make SelectedChild.tsx display information in a better way.
+- [ ] Write unit for functions in functions.ts
+- [ ] Write E2E to see in checking in & out children works
+- [ ] Deploy to production

@@ -9,11 +9,7 @@ import { getCurrentTimeIn24HourFormat } from "../utils/functions";
 
 export const useChildren = () => {
   const queryClient = useQueryClient();
-  const {
-    data: children,
-    status,
-    isLoading,
-  } = useQuery<Child[], Error>({
+  const { data: children, isLoading } = useQuery<Child[], Error>({
     queryKey: ["getChildren"],
     queryFn: getChildren,
   });
@@ -44,5 +40,5 @@ export const useChildren = () => {
     },
   });
 
-  return { children, status, isLoading, checkInChild, checkOutChild };
+  return { children, isLoading, checkInChild, checkOutChild };
 };
